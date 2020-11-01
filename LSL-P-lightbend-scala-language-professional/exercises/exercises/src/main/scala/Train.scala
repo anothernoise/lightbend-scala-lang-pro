@@ -1,0 +1,1 @@
+class Train(name :Int)
