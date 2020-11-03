@@ -135,7 +135,7 @@ scala> scala:quit
                     - Prefer immutable objects 
                     - Use vars only if you have a specific use case, e.g. (in Akka) 
 
-        - Class parameters are Not Fields
+        - Class parameters and promotion class parameters to fields
             ```scala
                 class Hello(message: String)
                 val hello  = new Hello("Hello")
@@ -145,9 +145,47 @@ scala> scala:quit
             Class parameters re only constructor parameters:
               - they can be used into class body
               - they cannot be assesed from the outside
-
-
+            However, can promote class parameter to the field.
+            Adding ```val``` or ```var``` before a class parameter: creates a field and initzialize the field with value of the parameters:
+            ```scala
+            class Hello(val message: String)
+            ```
   - Methods provide operations (encapsulation)
+    ```scala
+    def methodname(<params..>): <Type> = expression
+    ```
+  - Infix, Postfix and Prefix Operators 
+    - Operators are methods used in operation notation
+    - Operation notation means omitting dots and parentheses
+    - Methods with one paramete can be used in ```infix``` notation: 
+       ```scala
+           "some text" split " " 
+       ```
+    - Methods without parametes can be used in ```posfix``` notation (generally, avoid using ```posfix``` notation): 
+        ```scala
+            "some text" split " " size
+        ```
+    - Methods starting with ```unary_```  followed by +,-, ~ or ! can be used in  ```prefix``` notation
+    - Convention
+      - use ```inflix``` notation for methods with symbolyc names
+      - use ```prefix``` notation for ```unary_``` methods
+      - otherwise use the dot - ```.```  
+    - Equality, Default and Named Arguments
+      - Use ```==``` for equality (```!=``` for inequality)
+      - No diffrence between ```primitive``` types and ```reference```
+      - Use ```==``` when comparing. When overriding overide "equals"
+      - There's no type check, the argument ```==``` / equals ```Any```
+      - Use ```eq```/```ne``` for checking identity:
+       ```scala
+                new String("blah") eq new String("blah")
+       ```
+      - Comparissons in Scala is ```null-safe```
+      - Named Arguments work the same as Python
+    - Import
+      - use ```._``` for import all element of a package ot use specific name of class
+      - use ```{class names ..,}```
+      - use to rename, ex: ``` data => SQLDate```
+      - use scope import into a method
   - Access modifiers declare visiability (inforamtion hiding)
   - Singleton object are first-class objects
   - Inheritance 

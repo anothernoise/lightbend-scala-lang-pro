@@ -1,6 +1,6 @@
-define-class-parameters
+use-packages
 
-# Exercise 2 > Define class parameters
+# Exercise 8 > Use Packages
 
 In the course video recordings, the instructor uses a `man e` command in the sbt interactive session to display exercise instructions. 
 
