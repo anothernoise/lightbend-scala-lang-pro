@@ -200,7 +200,21 @@ scala> scala:quit
 
 
 
-## Deploy (Dockenirize)
+## Deploy (Dockerization)
 ```shell
 
 ```
+
+
+## Continios education on the code
+- Serilization 
+- ORC, Parquet, Arrow
+- Databricks datalake format
+- Rest API
+- gRPC
+- Akka
+- Spark code & performace tuning
+- Gatling load testing
+- Linkis connection hub https://github.com/WeBankFinTech/Linkis
+- https://github.com/databricks/LearningSparkV2
+- 
